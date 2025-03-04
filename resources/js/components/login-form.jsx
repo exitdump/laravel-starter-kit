@@ -77,9 +77,9 @@ export function LoginForm({
                   <div className="flex items-center">
                     <Label htmlFor="password">Password</Label>
                     {canResetPassword && (
-                      <a href="#" className="ml-auto text-sm underline-offset-4 hover:underline">
+                      <Link href={route('password.request')} className="ml-auto text-sm underline-offset-4 hover:underline">
                         Forgot your password?
-                      </a>
+                      </Link>
                     )}
                   </div>
                   <Input id="password" value={data.password} onChange={(e) => setData('password', e.target.value)} type="password" required />
@@ -91,9 +91,10 @@ export function LoginForm({
               </div>
               <div className="text-center text-sm">
                 Don&apos;t have an account?{" "}
-                <a href="#" className="underline underline-offset-4">
+                <Link
+                  href={route('register')} className="underline underline-offset-4">
                   Sign up
-                </a>
+                </Link>
               </div>
             </div>
           </form>
